@@ -78,7 +78,6 @@ Route::middleware(['admin_auth'])->prefix('admin')->group(function () {
     Route::get('/user/edit/{id}', [AdminUserController::class,'edit'])->name('admin_edit_user');
     Route::post('/user/edit/{id}', [AdminUserController::class,'update'])->name('admin_update_user');
     Route::get('/user/delete/{id}', [AdminUserController::class,'destroy'])->name('admin_delete_user');
-
 });
 
 
