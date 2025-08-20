@@ -71,7 +71,7 @@
 
         <!-- Contact Button -->
         <div class="text-center mt-4 mb-5">
-            <a href="https://wa.me/918302803362" target="_blank" class="btn bg_theme text-white px-5 py-2">
+            <a href="https://wa.me/919054905556" target="_blank" class="btn bg_theme text-white px-5 py-2">
                 <i class="fab fa-whatsapp"></i> Contact on WhatsApp
             </a>
         </div>

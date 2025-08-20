@@ -1189,3 +1189,8 @@ padding: 25px 10px;
   font-size: 12px;
   flex-shrink: 0;
 }
+
+.active{
+	color: #dc3545;
+	font-weight: 500 !important;
+}

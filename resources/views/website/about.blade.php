@@ -62,7 +62,7 @@
                             <span class="d-inline-block text-center bg_theme text-white rounded-circle cont_icon me-3"><i class="bi bi-telephone"></i></span>
                             <span class="flex-column">
                                 <span class="text-muted d-block"> Enquiry</span>
-                                <b class="d-block fs-5">+91 7984889816</b>
+                                <b class="d-block fs-5">+91 9054905556</b>
                             </span>
                         </li>
                         <li class="d-flex">
@@ -258,5 +258,11 @@
 </section>
 <!-- Meet Our Team Section End  -->
 
-
+<!-- active page -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script>
+    $(document).ready(function(){
+        $("#about-active").addClass("active")
+    })
+ </script>
 @endsection

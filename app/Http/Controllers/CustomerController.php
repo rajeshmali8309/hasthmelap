@@ -52,7 +52,7 @@ class CustomerController extends Controller
     {
         $id = base64_decode($id);
 
-        $family = Family::where('user_id', $id)->firstOrFail();
+        $family = Customer::with("family")->where('id', $id)->firstOrFail();
 
         return view('website.edit_family', compact('family'));
     }

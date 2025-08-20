@@ -109,4 +109,11 @@
 	</div>
 </section>
 
+<!-- active page -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script>
+    $(document).ready(function(){
+        $("#services-active").addClass("active")
+    })
+ </script>
 @endsection

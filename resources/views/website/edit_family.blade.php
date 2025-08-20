@@ -42,31 +42,31 @@
                             @csrf
                             <div class="form-group mt-2">
                                 <label for="father_name">Father's Name:</label>
-                                <input type="text" class="form-control" value="{{$family->father_name}}" id="father_name" placeholder="Enter father name" name="father_name">
+                                <input type="text" class="form-control" value="{{$family->family->father_name}}" id="father_name" placeholder="Enter father name" name="father_name">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="mother_name">Mother's Name:</label>
-                                <input type="text" class="form-control" value="{{$family->mother_name}}" id="mother_name" placeholder="Enter mother name" name="mother_name">
+                                <input type="text" class="form-control" value="{{$family->family->mother_name}}" id="mother_name" placeholder="Enter mother name" name="mother_name">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="profession">Profession:</label>
-                                <input type="text" class="form-control" value="{{$family->profession}}" id="profession" placeholder="Enter profession" name="profession">
+                                <input type="text" class="form-control" value="{{$family->family->profession}}" id="profession" placeholder="Enter profession" name="profession">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="family_status">Family Status:</label>
-                                <input type="text" class="form-control" value="{{$family->family_status}}" id="family_status" placeholder="Enter family status" name="family_status">
+                                <input type="text" class="form-control" value="{{$family->family->family_status}}" id="family_status" placeholder="Enter family status" name="family_status">
                             </div>
                             <div class="form-group mt-2">
                                 <label for="family_location">Family Location:</label>
-                                <input type="text" class="form-control" value="{{$family->family_location}}" id="family_location" placeholder="Enter family location" name="family_location">
+                                <input type="text" class="form-control" value="{{$family->family->family_location}}" id="family_location" placeholder="Enter family location" name="family_location">
                             </div>
                              <div class="form-group mt-2">
                                 <label for="total_siblings">Total Siblings:</label>
-                                <input type="text" class="form-control" value="{{$family->total_siblings}}" id="total_siblings" placeholder="Enter total siblings" name="total_siblings">
+                                <input type="text" class="form-control" value="{{$family->family->total_siblings}}" id="total_siblings" placeholder="Enter total siblings" name="total_siblings">
                             </div>
                              <div class="form-group mt-2">
                                 <label for="annual_income">Annual Income:</label>
-                                <input type="text" class="form-control" value="{{$family->annual_income}}" id="annual_income" placeholder="Enter annual income" name="annual_income">
+                                <input type="text" class="form-control" value="{{$family->family->annual_income}}" id="annual_income" placeholder="Enter annual income" name="annual_income">
                             </div>
 
                             <div class="form-group mt-3 d-grid">

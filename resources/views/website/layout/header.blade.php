@@ -24,7 +24,7 @@
    <section id="header" style="position:fixed; width: 100%; z-index:1">
       <nav class="navbar navbar-expand-lg navbar-light w-100 shadow bg_theme">
          <div class="container-xl">
-            <a class="d-flex text-white" href="#">
+            <a class="d-flex text-white" href="{{route('index')}}">
                <!-- <b class="fs-3 d-block logo"><i class="bi bi-arrow-through-heart text-danger me-1 align-middle"></i>  Hasthmelap</b> -->
                <img src="{{ asset('image/logo2.png') }}" class="p-2" width="80" height="70" alt="Logo" />
             </a>
@@ -33,7 +33,7 @@
             </button>
             <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem">
                <div class="offcanvas-header shadow" style="background-color: rgb(247, 156, 129) !important;">
-                  <a class="d-flex me-3 text-white" href="index.html">
+                  <a class="d-flex me-3 text-white" href="{{route('index')}}">
                      <img src="{{ asset('image/logo2.png') }}" width="60%" height="60%" alt="Logo" />
                   </a>
                   <img src="{{ asset('image/icons-svg/list.svg') }}" width="40" height="40" class="ms-auto bg_theme" data-bs-dismiss="offcanvas" aria-label="Close" alt="Close TemplateOnweb website menu" />
@@ -42,19 +42,19 @@
                <div class="offcanvas-body pt-0 align-items-center">
                   <ul class="navbar-nav align-items-lg-center ms-auto">
                      <li class="nav-item">
-                        <a class="nav-link" href="{{route('index')}}">Home</a>
+                        <a class="nav-link" id="home-active" href="{{route('index')}}">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="{{route('gallery')}}">Gallery</a>
+                        <a class="nav-link" id="gallery-active" href="{{route('gallery')}}">Gallery</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="{{route('services')}}">Services</a>
+                        <a class="nav-link" id="services-active" href="{{route('services')}}">Services</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="{{route('about')}}">About Us</a>
+                        <a class="nav-link" id="about-active" href="{{route('about')}}">About Us</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="{{route('contact')}}">Contact Us</a>
+                        <a class="nav-link" id="contact-active" href="{{route('contact')}}">Contact Us</a>
                      </li>
                   </ul>
                   <ul class="navbar-nav align-items-lg-center ms-auto">
@@ -80,7 +80,7 @@
                         <ul class="dropdown-menu drop_1 drop_search shadow p-3">
                            <li>
                               <div class="input-group">
-                                 <input type="text" id="searchBox" class="form-control" placeholder="Search Here">
+                                 <input type="text" id="searchBox" class="form-control" placeholder="Search by name and age">
                               </div>
                            </li>
                            <li>

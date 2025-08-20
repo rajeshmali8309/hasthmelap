@@ -13,9 +13,9 @@
 					<div class="p-3">
 						<b class="fs-5 d-block text-white mb-3">Matrimony Services</b>
 						<ul class="mb-0 font_14 list-unstyled">
-							<li class="mb-2"><a class="text-white-50" href="#">Silver Plan</a></li>
-							<li class="mb-2"><a class="text-white-50" href="#">Gold Plan</a></li>
-							<li><a class="text-white-50" href="#">Platinum Plan</a></li>
+							<li class="mb-2"><a class="text-white-50" href="{{route('services')}}">Silver Plan</a></li>
+							<li class="mb-2"><a class="text-white-50" href="{{route('services')}}">Gold Plan</a></li>
+							<li><a class="text-white-50" href="{{route('services')}}">Platinum Plan</a></li>
 						</ul>
 					</div>
 				</div>
@@ -142,5 +142,4 @@
 	});
 </script>
 </body>
-
 </html>

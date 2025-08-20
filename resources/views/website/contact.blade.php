@@ -31,7 +31,7 @@
                     <ul class="mb-0">
                         <li class="d-flex">
                             <span class="d-inline-block text-center bg_blue text-white rounded-circle cont_icon me-3"><i class="bi bi-telephone"></i></span>
-                            <span class="d-block text-muted mt-2">+91 7984889816</span>
+                            <span class="d-block text-muted mt-2">+91 9054905556</span>
                         </li>
                         <li class="d-flex mt-2">
                             <span class="d-inline-block text-center bg_blue text-white rounded-circle cont_icon me-3"><i class="bi bi-envelope"></i></span>
@@ -49,7 +49,7 @@
                     <span class="text_theme font_50 mb-3 d-block"><i class="bi bi-person"></i></span>
                     <b class="d-block">CUSTOMER RELATIONS</b>
                     <p class="mb-0 mt-3">Get help with your account, profile, or membership.</p>
-                    <span class="d-block mt-3 text-center"><a class="button rounded-pill bg_theme" href="https://wa.me/917984889816">Get Support</a></span>
+                    <span class="d-block mt-3 text-center"><a class="button rounded-pill bg_theme" href="https://wa.me/919054905556">Get Support</a></span>
                 </div>
             </div>
             <div class="col">
@@ -57,7 +57,7 @@
                     <span class="text_theme font_50 mb-3 d-block"><i class="bi bi-whatsapp"></i></span>
                     <b class="d-block">WHATSAPP SUPPORT</b>
                     <p class="mb-0 mt-3">Chat directly with our support team on WhatsApp.</p>
-                    <span class="d-block mt-3 text-center"><a class="button rounded-pill bg_theme" href="https://wa.me/917984889816">Get Support</a></span>
+                    <span class="d-block mt-3 text-center"><a class="button rounded-pill bg_theme" href="https://wa.me/919054905556">Get Support</a></span>
                 </div>
             </div>
         </div>
@@ -126,6 +126,7 @@
 
 <script>
     $(document).ready(function() {
+        $("#contact-active").addClass("active")
         const nameRegex = /^[A-Za-z]{2,}(?:\s[A-Za-z]{2,})*$/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const Mnumber = /^\d{10,15}$/;
