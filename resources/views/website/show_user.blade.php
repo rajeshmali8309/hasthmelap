@@ -30,6 +30,7 @@
                     <div class="row">
                         <div class="col-sm-6 mb-3"><strong>Name:</strong> {{ ($user->first_name ?? '-') . ' ' . ($user->last_name ?? '') }}</div>
                         <div class="col-sm-6 mb-3"><strong>Age:</strong> {{ !empty($user->age) ? $user->age . ' Years' : '-' }}</div>
+                        <div class="col-sm-6 mb-3"><strong>Gender:</strong> {{ ucfirst($user->gender) ?? '-' }}</div>
                         <div class="col-sm-6 mb-3"><strong>Caste:</strong> {{ $user->caste ?? '-' }}</div>
                         <div class="col-sm-6 mb-3"><strong>Religion:</strong> {{ $user->religion ?? '-' }}</div>
                         <div class="col-sm-6 mb-3"><strong>Height:</strong> {{ $user->height ?? '-' }}</div>

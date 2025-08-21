@@ -43,6 +43,7 @@
                         <div class="col-sm-6 mb-3"><strong>Name:</strong> {{ $user->first_name }} {{ $user->last_name }}</div>
                         <div class="col-sm-6 mb-3"><strong>Mobile Number:</strong> {{ $user->mobile ?? '-' }}</div>
                         <div class="col-sm-6 mb-3"><strong>Email:</strong> {{ $user->email ?? '-' }}</div>
+                        <div class="col-sm-6 mb-3"><strong>Email:</strong> {{ ucfirst($user->gender) ?? '-' }}</div>
                         <div class="col-sm-6 mb-3"><strong>Age:</strong> {{ $user->age ? $user->age.' Years' : '-' }}</div>
                         <div class="col-sm-6 mb-3"><strong>Caste:</strong> {{ $user->caste ?? '-' }}</div>
                         <div class="col-sm-6 mb-3"><strong>Religion:</strong> {{ $user->religion ?? '-' }}</div>
