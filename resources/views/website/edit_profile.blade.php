@@ -64,6 +64,19 @@
                             </div>
 
                             <div class="form-group mt-2">
+                                <label for="">Gender:</label><br>
+
+                                <input type="radio" id="male" name="gender" value="male"
+                                    {{ $user->gender == 'male' ? 'checked' : '' }}>
+                                <label for="male">Male</label>
+
+                                <input type="radio" id="female" name="gender" value="female"
+                                    {{ $user->gender == 'female' ? 'checked' : '' }}>
+                                <label for="female">Female</label>
+                                
+                            </div>
+
+                            <div class="form-group mt-2">
                                 <label for="email">Email:</label>
                                 <input type="email" class="form-control" id="email" value="{{$user->email}}" placeholder="Enter email" name="email">
                                 <button type="button" id="sendOtpBtn" class="btn btn-sm btn-primary mt-2" disabled>Send OTP</button>
@@ -166,7 +179,7 @@
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const LoginProfileEmail = "{{ $user->email }}";
 
-        
+
         // Trim function on blur
         $("input").on("blur", function() {
             let value = $(this).val().trim();
@@ -219,10 +232,10 @@
 
         $("#email").on("keyup", function() {
 
-            if($(this).val() == LoginProfileEmail){
+            if ($(this).val() == LoginProfileEmail) {
                 $("#sendOtpBtn").hide();
                 $(".OTP").hide();
-            }else{
+            } else {
                 $("#sendOtpBtn").show();
                 $(".OTP").show();
             }
@@ -312,9 +325,9 @@
             }
 
 
-            if($("#email").val() == LoginProfileEmail){
+            if ($("#email").val() == LoginProfileEmail) {
                 isvalidotp = true;
-            }else{
+            } else {
                 if ($("#otp").val().trim() === "") {
                     showError($("#otp"), "OTP field is required.");
                     isvalidotp = false;
@@ -325,7 +338,7 @@
                 e.preventDefault();
             }
 
-            if(!isvalidotp){
+            if (!isvalidotp) {
                 e.preventDefault();
             }
         });

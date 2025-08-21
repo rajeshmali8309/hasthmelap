@@ -20,8 +20,26 @@ class WebController extends Controller
 
     public function gallery()
     {
-        $customers = Customer::select('id', 'first_name', 'last_name', 'age', 'caste', 'image')
-            ->paginate(8);
+        $query = Customer::select('id', 'first_name', 'last_name', 'age', 'caste', 'image', 'gender');
+
+        if (session()->has('user_id')) {
+            $userId = session('user_id');
+            $userGender = session('user_gender');
+
+            // Male user -> female fetch
+            if ($userGender == 'male') {
+                $query->where('gender', 'female');
+            }
+            // Female user -> male fetch
+            elseif ($userGender == 'female') {
+                $query->where('gender', 'male');
+            }
+
+            // exclude self profile
+            $query->where('id', '!=', $userId);
+        }
+
+        $customers = $query->paginate(8);
 
         return view('website.gallery', compact('customers'));
     }

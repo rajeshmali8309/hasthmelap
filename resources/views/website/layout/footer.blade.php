@@ -77,7 +77,7 @@
 		</div>
 
 		<!-- WhatsApp Floating Button -->
-		<a href="https://wa.me/919054905556?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services" 
+		<a href="https://wa.me/9054905556?text=Hello%20I%20am%20interested%20in%20your%20services" 
 		target="_blank"
 		class="btn btn-success rounded-circle d-flex align-items-center justify-content-center shadow whatsapp-btn"
 		style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; z-index: 1000;">

@@ -97,6 +97,7 @@ class CustomerController extends Controller
             'profile_for' => 'required',
             'first_name'  => 'required',
             'last_name'   => 'required',
+            'gender'      => 'required',
             'email'       => 'required|email|unique:customers,email',
             'password'    => 'required',
             'otp'         => 'required',
@@ -111,6 +112,7 @@ class CustomerController extends Controller
         $user->profile_for = $request->profile_for;
         $user->first_name  = $request->first_name;
         $user->last_name   = $request->last_name;
+        $user->gender      = $request->gender;
         $user->email       = $request->email;
         $user->password    = Hash::make($request->password);
         $user->save();
@@ -163,6 +165,7 @@ class CustomerController extends Controller
                 session()->put('user_id', $customer->id);
                 session()->put('user_email', $customer->email);
                 session()->put('user_name', $customer->first_name . ' ' . $customer->last_name);
+                session()->put('user_gender', $customer->gender);
 
                 return redirect()->route('index')->with('success', 'Login successful!');
             } else {
@@ -214,11 +217,13 @@ class CustomerController extends Controller
             'first_name' => 'required',
             'last_name'  => 'required',
             'email'      => 'required',
+            'gender'     => 'required',
         ]);
 
         $user->profile_for     = $request->profile_for;
         $user->first_name      = $request->first_name;
         $user->last_name       = $request->last_name;
+        $user->gender          = $request->gender;
         $user->email           = $request->email;
         $user->mobile          = $request->mobile;
         $user->age             = $request->age;

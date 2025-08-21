@@ -67,6 +67,12 @@
                                 <input type="text" class="form-control" id="last_name" value="{{old('last_name')}}" placeholder="Enter last name" name="last_name">
                             </div>
 
+                            <div class="form-group mt-2" id="gender">
+                                <label for="">Gender:</label><br>
+                                <input type="radio" id="male" value="{{old('male')}} male" name="gender"> <label for="male">Male</label>
+                                <input type="radio" id="female" value="{{old('female')}} female" name="gender"> <label for="female">Female</label>
+                            </div>
+
                             <div class="form-group mt-2">
                                 <label for="email">Email:</label>
                                 <input type="email" class="form-control" id="email" value="{{old('email')}}" placeholder="Enter email" name="email">
@@ -199,6 +205,12 @@
                 showError($("#email"), "Please enter a valid email.");
                 isValid = false;
             }
+
+            if (!$("input[name='gender']:checked").val()) {
+                showError($("#gender"), "Please select your gender");
+                isValid = false;
+            }
+
             if (!passwordRegex.test($("#password").val())) {
                 showError($("#password"), "Password must be at least 6 characters, include upper, lower, and number.");
                 isValid = false;
@@ -264,12 +276,16 @@
             }
         });
 
-        $("#otp").on("blur", function() {
-            if ($(this).val() === "") {
-                showError($(this), "OTP field is required.");
+        $("input[name='gender']").on("blur", function () {
+            if ($("input[name='gender']:checked").length === 0) {
+                showError($("#gender"), "Please select your gender"); 
             } else {
-                showError($(this), "");
+                showError($("#gender"), "");
             }
+        });
+
+        $("input[name='gender']").focus(function(){
+            showError($("#gender"), "");
         });
 
         // Show error function
