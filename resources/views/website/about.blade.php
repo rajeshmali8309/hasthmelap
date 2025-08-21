@@ -53,7 +53,7 @@
             <div class="col">
                 <div class="about_pg2_right">
                     <h1 class="text-uppercase font_50">Welcome to</h1>
-                    <h2 class="text-theme text-uppercase">Wedding matrimony</h2>
+                    <h2 class="text-theme text-uppercase"><span class="text_theme">Hasthmelap</span> matrimony</h2>
                     <p class="mt-4 mb-4">Find your perfect life partner with the most trusted matrimony platform. We connect hearts with care, trust, and tradition.</p>
                     <span><a class="text-primary" href="{{route('services')}}">Click here</a> to Start you matrimony journey today.</span>
                     <p class="border-top mt-4 pt-4 mb-4">We make partner search simple and meaningful. Whether you’re looking for someone who shares your values, culture, or dreams, our platform is built to help you find your ideal match. With easy navigation and verified profiles, your journey to a happy future starts here.</p>
