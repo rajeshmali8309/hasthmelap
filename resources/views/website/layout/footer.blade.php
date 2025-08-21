@@ -61,16 +61,16 @@
 		<div class="footer_bottom_1 row  mt-4">
 			<div class="col-md-8">
 				<div class="footer_bottom_1_left pt-2">
-					<p class="mb-0 text-white-50">© {{ date('Y') }} <a href="{{route('index')}}">Hasthmelap Metrimony</a>. All Rights Reserved.</a></p>
+					<p class="mb-0 text-white-50">© {{ date('Y') }} <a href="{{route('index')}}"  style="color: rgb(247, 156, 129)">Hasthmelap Metrimony</a>. All Rights Reserved.</a></p>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="footer_bottom_1_right">
 					<ul class="mb-0 d-flex social_brands justify-content-end">
-						<li><a class="d-inline-block text-white text-center" href="#"><i class="bi bi-facebook"></i></a></li>
+						<li><a class="d-inline-block text-white text-center" href="https://www.facebook.com/profile.php?id=61579294905117"><i class="bi bi-facebook"></i></a></li>
 						<li class="ms-2"><a class="d-inline-block text-white text-center" href="https://www.instagram.com/hasthmelap"><i class="bi bi-instagram"></i></a></li>
-						<li class="ms-2"><a class="d-inline-block text-white text-center" href="#"><i class="bi bi-linkedin"></i></a></li>
-						<li class="ms-2"><a class="d-inline-block text-white text-center" href="#"><i class="bi bi-youtube"></i></a></li>
+						<li class="ms-2"><a class="d-inline-block text-white text-center" href="https://www.linkedin.com/in/hasthmelap-metrimony-787b9437b/"><i class="bi bi-linkedin"></i></a></li>
+						<li class="ms-2"><a class="d-inline-block text-white text-center" href="https://www.youtube.com/@Hasthmelap"><i class="bi bi-youtube"></i></a></li>
 					</ul>
 				</div>
 			</div>
