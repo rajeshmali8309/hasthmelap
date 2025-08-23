@@ -5,6 +5,13 @@
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="HasthMelap ek matrimonial website hai jaha ladka ya ladki ke liye perfect shaadi partner ki talash khatam hoti hai. Apna profile banaye aur best life partner paye.">
+   <meta name="keywords" content="shaadi, matrimony, matrimonial site, marriage, ladka ladki shadi, online matchmaking, hasthmelap, partner search, wedding, rishta">
+   <meta name="author" content="HasthMelap">
+   <meta charset="UTF-8">
+
+   <!-- Viewport (for mobile responsive) -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>@yield('title', 'Hasthmelap')</title>
    <link href="{{ url('css/bootstrap.min.css') }}" rel="stylesheet">
    <link href="{{ url('css/global.css') }}" rel="stylesheet">
@@ -85,9 +92,9 @@
                            </li>
                            <li>
                               <div id="searchResults" class="mt-3" style="display:none; max-height:250px; overflow-y:auto;">
-                                 
-                                    <!-- show search data in this section from ajax -->
-                                
+
+                                 <!-- show search data in this section from ajax -->
+
                               </div>
                            </li>
                         </ul>

@@ -133,90 +133,73 @@
     </div>
 </section>
 
+<!-- clients review section start -->
+
 <section id="testim" class="pb-5 pt-5 bg_light">
-    <div class="container-xl">
-        <div class="testim_1 row text-center mb-4">
-            <div class="col-md-12">
-                <h2><span class="text-theme">CUSTOMER</span> TESTIMONIALS</h2>
-                <span class="text-uppercase">Real Stories. Real Connections. Real Happiness.</span>
-            </div>
-        </div>
-        <div class="testim_2 row row-cols-1 row-cols-md-3">
-            <div class="col">
-                <div class="testim_2_left">
-                    <div class="testim_2_left1 bg-white py-5 px-4 rounded-3 shadow">
-                        <span class="text-warning">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star"></i>
-                            <span class="font_14 text-muted ms-2">(50 Reviews)</span>
-                        </span>
-                        <p class="mb-0 mt-3">Hasthmelap made my partner search smooth and stress-free. I found someone who truly understands me.</p>
-                    </div>
-                    <ul class="mb-0 px-4 mt-4">
-                        <li class="d-flex mb-0"  style="height: 70px; width: 300px;">
-                            <span><a href="#"><img class="rounded-circle" alt="abc" src="image/review3.jfif"  style="height: 80%; width: 120%;"></a></span>
-                            <span class="flex-column ms-3 lh-1 mt-2">
-                                <b class="d-block fs-6"><a class="yellow" href="#">Rahul Sharma</a></b>
-                                <span class="font_12 d-block text-uppercase mt-2">IT PROFESSION</span>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col">
-                <div class="testim_2_left">
-                    <div class="testim_2_left1 bg-white py-5 px-4 rounded-3 shadow">
-                        <span class="text-warning">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <span class="font_14 text-muted ms-2">(40 Reviews)</span>
-                        </span>
-                        <p class="mb-0 mt-3">The platform is easy to use and highly secure. I'm grateful for the amazing match I found here.</p>
-                    </div>
-                    <ul class="mb-0 px-4 mt-4">
-                        <li class="d-flex mb-0" style="height: 70px; width: 300px;">
-                            <span><a href="#"><img class="rounded-circle" alt="abc" src="image/review1.jpg"  style="height: 80%; width: 100%;"></a></span>
-                            <span class="flex-column ms-3 lh-1 mt-2">
-                                <b class="d-block fs-6"><a class="yellow" href="#">Ashish Dodiya</a></b>
-                                <span class="font_12 d-block text-uppercase mt-2">GOVERNMENT STAFF</span>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col">
-                <div class="testim_2_left">
-                    <div class="testim_2_left1 bg-white py-5 px-4 rounded-3 shadow">
-                        <span class="text-warning">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
-                            <span class="font_14 text-muted ms-2">(55 Reviews)</span>
-                        </span>
-                        <p class="mb-0 mt-3">Thanks to Hasthmelap, I’m now happily married! The service is genuinely reliable and trustworthy.</p>
-                    </div>
-                    <ul class="mb-0 px-4 mt-4">
-                        <li class="d-flex mb-0"  style="height: 70px; width: 300px;">
-                            <span><a href="#"><img class="rounded-circle" alt="abc" src="image/review2.jpg"  style="height: 80%; width: 100%;"></a></span>
-                            <span class="flex-column ms-3 lh-1 mt-2">
-                                <b class="d-block fs-6"><a class="yellow" href="#">Ketan Saini</a></b>
-                                <span class="font_12 d-block text-uppercase mt-2">Teacher</span>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <div class="container-xl">
+    <div class="testim_1 row text-center mb-4">
+      <div class="col-md-12">
+        <h2><span class="text-theme">CUSTOMER</span> TESTIMONIALS</h2>
+        <span class="text-uppercase">Real Stories. Real Connections. Real Happiness.</span>
+      </div>
     </div>
+
+    <!-- Bootstrap Carousel -->
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-touch="true" data-bs-pause="false">
+      
+      <!-- Indicators (Dynamic) -->
+      <div class="carousel-indicators">
+        @for($i = 0; $i < 10; $i++)
+          <button type="button" 
+                  data-bs-target="#testimonialCarousel" 
+                  data-bs-slide-to="{{ $i }}" 
+                  @if($i==0) class="active" aria-current="true" @endif 
+                  aria-label="Slide {{ $i+1 }}">
+          </button>
+        @endfor
+      </div>
+
+      <div class="carousel-inner">
+
+        <!-- Reviews -->
+        @for($i = 0; $i < 10; $i++)
+        <div class="carousel-item @if($i == 0) active @endif">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+              <div class="testim_2_left1 bg-white py-5 px-4 rounded-3 shadow text-center">
+                <span class="text-warning">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <i class="bi bi-star"></i>
+                  <!-- <span class="font_14 text-muted ms-2">(50 Reviews)</span> -->
+                </span>
+                <p class="mb-0 mt-3 text-dark">
+                  Hasthmelap made my partner search smooth and stress-free. 
+                  I found someone who truly understands me.
+                </p>
+                <div class="d-flex align-items-center justify-content-center mt-4">
+                  <img src="{{ asset('image/review3.jfif') }}" 
+                       class="rounded-circle" 
+                       style="height:60px;width:60px;object-fit:cover;">
+                  <div class="ms-3 text-start">
+                    <b class="d-block fs-6 text-dark">Rahul Sharma {{ $i+1 }}</b>
+                    <span class="font_12 text-uppercase text-dark">IT PROFESSION</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        @endfor
+
+      </div>
+    </div>
+  </div>
 </section>
+<!-- clients review section  end-->
+
 
 <!-- Meet Our Team Section Start  -->
 

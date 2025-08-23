@@ -61,7 +61,7 @@
 		<div class="footer_bottom_1 row  mt-4">
 			<div class="col-md-8">
 				<div class="footer_bottom_1_left pt-2">
-					<p class="mb-0 text-white-50">© {{ date('Y') }} <a href="{{route('index')}}"  style="color: rgb(247, 156, 129)">Hasthmelap Metrimony</a>. All Rights Reserved.</a></p>
+					<p class="mb-0 text-white-50">© {{ date('Y') }} <a href="{{route('index')}}" style="color: rgb(247, 156, 129)">Hasthmelap Metrimony</a>. All Rights Reserved.</a></p>
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -76,11 +76,51 @@
 			</div>
 		</div>
 
+		<!-- Floating Feedback Button -->
+		<button id="feedbackBtn">
+			Leave a Review
+		</button>
+
+		<!-- Feedback Modal -->
+		<div id="feedbackModal" class="feedback-modal">
+			<div class="feedback-content">
+				<span id="closeModal" class="feedback-close">&times;</span>
+				<h4 class="feedback-title">Leave a review</h4>
+
+				<form id="feedbackForm" method="POST" action="">
+					@csrf
+
+					<!-- Rating -->
+					<div class="mb-3 text-center" id="starRating">
+						<label class="feedback-label"></label>
+						<span class="feedback-star" data-value="1">&#9733;</span>
+						<span class="feedback-star" data-value="2">&#9733;</span>
+						<span class="feedback-star" data-value="3">&#9733;</span>
+						<span class="feedback-star" data-value="4">&#9733;</span>
+						<span class="feedback-star" data-value="5">&#9733;</span>
+						<input type="hidden" name="rating" id="ratingValue" required>
+					</div>
+
+					<!-- Description -->
+					<div class="mb-3">
+						<label class="feedback-label">Your Feedback:</label>
+						<textarea name="description" class="feedback-textarea" rows="4" placeholder="Write your feedback here..." required></textarea>
+					</div>
+
+					<!-- Submit -->
+					<div class="text-center">
+						<button type="submit" class="feedback-submit">Submit Feedback</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+
 		<!-- WhatsApp Floating Button -->
-		<a href="https://wa.me/9054905556?text=Hello%20I%20am%20interested%20in%20your%20services" 
-		target="_blank"
-		class="btn btn-success rounded-circle d-flex align-items-center justify-content-center shadow whatsapp-btn"
-		style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; z-index: 1000;">
+		<a href="https://wa.me/9054905556?text=Hello%20I%20am%20interested%20in%20your%20services"
+			target="_blank"
+			class="btn btn-success rounded-circle d-flex align-items-center justify-content-center shadow whatsapp-btn"
+			style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; z-index: 1000;">
 			<i class="bi bi-whatsapp fs-2 text-white"></i>
 		</a>
 	</div>
@@ -147,7 +187,43 @@
 				$('#searchResults').hide();
 			}
 		});
+
+		// review query
+		// Open Modal
+		$('#feedbackBtn').click(function(){
+			$('#feedbackModal').fadeIn().css('display', 'flex');
+		});
+
+		// Close Modal
+		$('#closeModal').click(function(){
+			$('#feedbackModal').fadeOut();
+		});
+
+		// Click outside modal
+		$(window).click(function(e){
+			if($(e.target).is('#feedbackModal')){
+				$('#feedbackModal').fadeOut();
+			}
+		});
+
+
+		$('#starRating .feedback-star').click(function(){
+			var rating = $(this).data('value');
+			$('#ratingValue').val(rating);
+			$('#starRating .feedback-star').removeClass('selected').css('color','#ccc');
+			$(this).prevAll().addBack().addClass('selected').css('color','#ff9800');
+		});
+
+		// Optional: form submit validation
+		$('#feedbackForm').submit(function(e){
+			if(!$('#ratingValue').val()){
+				alert('Please select a rating!');
+				e.preventDefault();
+			}
+		});
 	});
+
 </script>
 </body>
+
 </html>
