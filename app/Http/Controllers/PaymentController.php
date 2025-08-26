@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use App\Models\Customer;
-use App\Models\Team;
+use App\Models\Payment;
 
-class WebController extends Controller
+class PaymentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,57 +13,7 @@ class WebController extends Controller
      */
     public function index()
     {
-        return view('website.index');
-    }
-
-    public function gallery()
-    {
-        $query = Customer::select('id', 'first_name', 'last_name', 'age', 'caste', 'image', 'gender');
-
-        if (session()->has('user_id')) {
-            $userId = session('user_id');
-            $userGender = session('user_gender');
-
-            // Male user -> female fetch
-            if ($userGender == 'male') {
-                $query->where('gender', 'female');
-            }
-            // Female user -> male fetch
-            elseif ($userGender == 'female') {
-                $query->where('gender', 'male');
-            }
-
-            // exclude self profile
-            $query->where('id', '!=', $userId);
-        }
-
-        $customers = $query->paginate(8);
-
-        return view('website.gallery', compact('customers'));
-    }
-
-
-
-    public function services()
-    {
-        return view('website.services');
-    }
-
-    public function terms()
-    {
-        return view('website.terms');
-    }
-
-
-    public function about()
-    {
-        $teams = Team::orderBy('id', 'desc')->get();
-        return view('website.about', compact('teams'));
-    }
-
-    public function contact()
-    {
-        return view('website.contact');
+        //
     }
 
     /**
@@ -132,5 +80,25 @@ class WebController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function proofinsert(Request $request)
+    {
+        dd($request->all());
+        $pay = new Payment();
+        $pay->user_id          = $request->user_id;
+        $pay->plan_name      = $request->plan_name;
+        $pay->amount =  $request->utr;
+
+        // image upload
+        if ($request->hasFile('proof')) {
+            $image      = $request->file('proof');
+            $imageName  = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('uploads/payment'), $imageName);
+            $pay->screenshot = $imageName;
+        }
+
+        $pay->save();
+        return redirect()->back()->with('success', 'payment proof Submited');
     }
 }

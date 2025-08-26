@@ -11,12 +11,14 @@
             <div class="row g-0">
                 <!-- Profile Image -->
                 <div class="col-md-4 text-center p-4">
-                    <img src="{{ !empty($user->image) && file_exists(public_path('uploads/profile/' . $user->image)) 
-                                ? asset('uploads/profile/' . $user->image) 
-                                : asset('image/default_user.webp') }}"
-                         class="img-fluid rounded-circle border"
-                         alt="Profile Photo"
-                         style="max-width: 220px;">
+                    <div class="profile-image-wrapper mx-auto">
+                        <img src="{{ !empty($user->image) && file_exists(public_path('uploads/profile/' . $user->image)) 
+                                    ? asset('uploads/profile/' . $user->image)
+                                    : asset('image/default_user.webp') }}"
+                            alt="Profile Photo"
+                            class="profile-image border">
+                    </div>
+
                     <h4 class="mt-3 text_theme">{{ ($user->first_name ?? '-') . ' ' . ($user->last_name ?? '') }}</h4>
                     <p class="mb-1">
                         <i class="bi bi-geo-alt text_theme"></i> 

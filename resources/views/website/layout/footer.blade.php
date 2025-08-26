@@ -38,7 +38,7 @@
 						<b class="fs-5 d-block text-white mb-3">Information</b>
 						<ul class="mb-0 font_14 list-unstyled">
 							<li class="mb-2"><a class="text-white-50" href="{{route('about')}}">About Us</a></li>
-							<li class="mb-2"><a class="text-white-50" href="#">Terms & Conditions</a></li>
+							<li class="mb-2"><a class="text-white-50" href="{{ route('terms') }}">Terms & Conditions</a></li>
 							<li><a class="text-white-50" href="#">Privacy Policy</a></li>
 						</ul>
 					</div>
@@ -205,7 +205,6 @@
 				$('#feedbackModal').fadeOut();
 			}
 		});
-
 
 		$('#starRating .feedback-star').click(function(){
 			var rating = $(this).data('value');

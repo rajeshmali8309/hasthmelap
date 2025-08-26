@@ -30,8 +30,10 @@
             <div class="row g-0">
                 <!-- Profile Image -->
                 <div class="col-md-4 text-center p-4">
-                    <img src="{{ $user->image ? asset('uploads/profile/'.$user->image) : asset('image/default_user.webp') }}" 
-                         class="img-fluid border mt-4" alt="Profile Photo">
+                    <div class="profile-image-wrapper mx-auto">
+                        <img src="{{ $user->image ? asset('uploads/profile/'.$user->image) : asset('image/default_user.webp') }}" 
+                            class="profile-image" alt="Profile Photo">
+                    </div>
                     <h4 class="mt-3 text_theme">{{ $user->first_name }} {{ $user->last_name }}</h4>
                     <p class="mb-1"><i class="bi bi-geo-alt text_theme"></i> {{ $user->city ?? '-' }}</p>
                 </div>
